@@ -45,13 +45,11 @@ class _DemoAppState extends State<DemoApp> {
 
   void _incrementTrimLines() => setState(() => _trimLines++);
 
-  void _decrementTrimLines() =>
-      setState(() => _trimLines = _trimLines > 1 ? _trimLines - 1 : 1);
+  void _decrementTrimLines() => setState(() => _trimLines = _trimLines > 1 ? _trimLines - 1 : 1);
 
   void _incrementTrimLength() => setState(() => _trimLength++);
 
-  void _decrementTrimLength() =>
-      setState(() => _trimLength = _trimLength > 1 ? _trimLength - 1 : 1);
+  void _decrementTrimLength() => setState(() => _trimLength = _trimLength > 1 ? _trimLength - 1 : 1);
 
   void _showMessage(String message) {
     ScaffoldMessenger.of(context)
@@ -133,8 +131,7 @@ class _DemoAppState extends State<DemoApp> {
                       decoration: TextDecoration.underline,
                       color: Colors.green,
                     ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => _showMessage(text),
+                    recognizer: TapGestureRecognizer()..onTap = () => _showMessage(text),
                   );
                 },
               ),
@@ -155,8 +152,7 @@ class _DemoAppState extends State<DemoApp> {
                       style: textStyle.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () => _showMessage('User not found'),
+                      recognizer: TapGestureRecognizer()..onTap = () => _showMessage('User not found'),
                     );
                   }
 
@@ -166,8 +162,7 @@ class _DemoAppState extends State<DemoApp> {
                       decoration: TextDecoration.underline,
                       color: Colors.redAccent,
                     ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => _showMessage('@$user'),
+                    recognizer: TapGestureRecognizer()..onTap = () => _showMessage('@$user'),
                     children: [
                       if (user == 'iOS') const TextSpan(text: 'Extra'),
                     ],
@@ -189,8 +184,7 @@ class _DemoAppState extends State<DemoApp> {
                       height: 1.5,
                       letterSpacing: 5,
                     ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => _showMessage(text),
+                    recognizer: TapGestureRecognizer()..onTap = () => _showMessage(text),
                   );
                 },
               ),
@@ -250,8 +244,7 @@ class _DemoAppState extends State<DemoApp> {
                 TextSpan(
                   text: 'widgets, ',
                   style: const TextStyle(color: Colors.green),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => _showMessage('Widgets tapped!'),
+                  recognizer: TapGestureRecognizer()..onTap = () => _showMessage('Widgets tapped!'),
                 ),
                 const TextSpan(
                   text:
@@ -388,8 +381,7 @@ class _DraggableDividerState extends State<DraggableDivider> {
               final newWidth = _leftWidth + details.delta.dx;
               final screenWidth = MediaQuery.of(context).size.width;
 
-              if (newWidth >= _minWidth &&
-                  (screenWidth - newWidth - dividerWidth) >= _minWidth) {
+              if (newWidth >= _minWidth && (screenWidth - newWidth - dividerWidth) >= _minWidth) {
                 _leftWidth = newWidth;
               }
             });
